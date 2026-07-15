@@ -1,162 +1,167 @@
 body {
-    background-color: #fdfbf2; 
-    color: #333333;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa; /* เปลี่ยนเป็นสีเทาอมครีมสว่าง สะอาดตา */
+    color: #212529; /* สีตัวอักษรเข้มเกือบดำ อ่านง่ายและดูโปร */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* ฟอนต์ระบบที่ดูเนียนตาขึ้น */
     margin: 0;
     padding: 0;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* กางขนาดหน้าจอหลักให้กว้างสะใจ 1400px เพื่อรองรับจอเพลงขนาด 70% และรูปอนิเมะทรงสูง */
+/* 🧱 หน้าจอหลักกว้าง 1400px เท่าเดิม แต่ปรับระยะขอบให้ดูโปร่งขึ้น */
 .container {
     max-width: 1400px;
-    margin: 50px auto;
-    padding: 24px;
+    margin: 60px auto;
+    padding: 32px;
 }
 
-/* 👤 ส่วนแนะนำตัวเจ้าของเว็บ (Profile Header) */
+/* 👤 ส่วนแนะนำตัวเจ้าของเว็บ (Profile Header) - ปรับให้คลีนแบบมินิมอล */
 .profile-section {
     background-color: #ffffff; 
-    border-radius: 24px;
-    padding: 35px;
+    border-radius: 16px; /* ลดความโค้งลงเพื่อให้ดูเนี้ยบขึ้น */
+    padding: 40px;
     display: flex;
     align-items: center;
-    gap: 35px;
-    box-shadow: 0 10px 30px rgba(235, 225, 180, 0.35); 
-    margin-bottom: 50px;
-    border: 1px solid rgba(255, 242, 204, 0.6);
+    gap: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); /* เงาบางๆ นุ่มนวล */
+    margin-bottom: 60px;
+    border: 1px solid #e9ecef;
 }
 
 .profile-img {
-    width: 150px;           
-    height: 150px;          
-    border-radius: 15px;    
+    width: 140px;           
+    height: 140px;          
+    border-radius: 12px;    
     object-fit: cover;      
-    border: 4px solid #fff9e6; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid #dee2e6; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
 .profile-info h1 {
-    margin: 0 0 8px 0;
-    color: #c78d46; 
-    font-size: 26px;
+    margin: 0 0 10px 0;
+    color: #343a40; /* สีเทาเข้มสุขุม */
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
 }
 
 .profile-info p {
     margin: 6px 0;
-    font-size: 15px;
-    color: #666;
+    font-size: 14px;
+    color: #6c757d; /* สีเทาซอฟต์ */
+    line-height: 1.6;
 }
 
 /* 📦 เซกชัน Bento Box */
 .bento-section {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .bento-section h2 {
-    color: #b57a35;
-    font-size: 22px;
-    margin-bottom: 25px;
-    border-left: 6px solid #ffe082;
-    padding-left: 15px;
+    color: #495057;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    border-left: 4px solid #868e96; /* เปลี่ยนจากสีเหลืองเป็นสีเทาเข้มแบบโมเดิร์น */
+    padding-left: 16px;
     letter-spacing: 0.5px;
 }
 
-/* 🎬 ส่วนการ์ดอนิเมะ 5 กล่องเรียงหน้ากระดาน (ปรับความสูงรูปตามบรีฟครูกิ่ง) */
+/* 🎬 ส่วนการ์ดอนิเมะ 5 กล่องเรียงหน้ากระดาน */
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr); 
-    gap: 20px;
+    gap: 24px;
 }
 
 .bento-card {
     background-color: #ffffff;
-    border-radius: 20px;
-    padding: 16px;
+    border-radius: 16px;
+    padding: 20px;
     position: relative;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.02);
-    border: 1px solid rgba(0,0,0,0.02);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+    border: 1px solid #e9ecef;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); /* เอฟเฟกต์สมูทแบบเว็บพรีเมียม */
     display: flex;
     flex-direction: column;
 }
 
 .bento-card:hover {
-    transform: translateY(-6px); 
-    box-shadow: 0 12px 28px rgba(180,150,50,0.1);
+    transform: translateY(-4px); 
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+    border-color: #ced4da;
 }
 
-/* 🟢 ปรับรูปภาพอนิเมะให้สูงงงงงงตาแตกแบบเก็บรายละเอียดโปสเตอร์ครบถ้วน ไม่โดนตัดหัวท้าย */
+/* 🟢 รูปภาพอนิเมะทรงสูงโปร่ง */
 .bento-card img {
     width: 100%;
-    height: 380px; /* ขยายจาก 220px ขึ้นเป็น 380px สูงโปร่งสะใจโชว์ลายเส้นเต็มๆ */
+    height: 380px; 
     object-fit: cover; 
-    border-radius: 14px;
-    margin-top: 25px;
-    margin-bottom: 12px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 16px;
 }
 
 .bento-card h3 {
-    margin: 5px 0;
+    margin: 0 0 6px 0;
     font-size: 15px;
-    font-weight: bold;
-    color: #444;
+    font-weight: 600;
+    color: #212529;
 }
 
 .bento-card p {
     margin: 0;
-    font-size: 12px;
-    color: #888;
-    line-height: 1.4;
+    font-size: 13px;
+    color: #6c757d;
+    line-height: 1.5;
 }
 
-/* ป้ายตัวเลขอันดับ */
+/* ป้ายตัวเลขอันดับ - เปลี่ยนเป็นโทน Charcoal/Minimal ให้ดูแพง */
 .rank-tag {
     position: absolute;
-    top: 15px;
-    left: 15px;
-    background: linear-gradient(135deg, #ffe082, #ffd54f);
-    color: #5d4037;
-    padding: 4px 12px;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 12px;
+    top: 20px;
+    left: 20px;
+    background: #212529; /* พื้นหลังดำ/เทาเข้ม */
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 11px;
     z-index: 10;
-    box-shadow: 0 2px 6px rgba(255, 213, 79, 0.3);
+    letter-spacing: 0.5px;
 }
 
-/* 🎧 ส่วนการ์ดเพลงโปรด (ปรับสัดส่วน Layout เป็น 70:30) */
+/* 🎧 ส่วนการ์ดเพลงโปรด (Layout 70:30) */
 .bento-grid-songs {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 30px;
 }
 
 .song-card {
     background-color: #ffffff;
-    border-radius: 24px; 
-    padding: 24px; 
+    border-radius: 16px; 
+    padding: 30px; 
     display: flex;
     align-items: center;
-    gap: 35px;
+    gap: 40px;
     position: relative;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.02);
-    border: 1px solid rgba(0,0,0,0.02);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+    border: 1px solid #e9ecef;
     transition: all 0.3s ease;
 }
 
 .song-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(180,150,50,0.08);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
 }
 
-/* 📺 🟢 หน้าจอวิดีโอ YouTube ปรับให้กินพื้นที่ 70% ของกล่องเพลง ใหญ่สะใจตาแตก! */
+/* 📺 หน้าจอวิดีโอ YouTube (70%) */
 .video-container {
-    flex: 7; /* สัดส่วนเลข 7 (คิดเป็น 70%) */
-    aspect-ratio: 16 / 9; /* ล็อกสัดส่วนให้วิดีโอขยายใหญ่ตามขอบจอโดยที่ภาพไม่เบี้ยว */
-    border-radius: 16px; 
+    flex: 7; 
+    aspect-ratio: 16 / 9; 
+    border-radius: 12px; 
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12); 
-    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); 
 }
 
 .video-container iframe {
@@ -165,53 +170,57 @@ body {
     border: none;
 }
 
-/* 🟢 กลุ่มข้อมูลชื่อเพลง ปรับให้กินพื้นที่ 30% ที่เหลือ */
+/* 🟢 กลุ่มข้อมูลชื่อเพลง (30%) */
 .song-info {
-    flex: 3; /* สัดส่วนเลข 3 (คิดเป็น 30%) */
+    flex: 3; 
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 
 .song-card h4 {
     margin: 0;
-    font-size: 22px; /* เพิ่มขนาดฟอนต์ให้เด่นขึ้นรับกับจอเพลงยักษ์ */
-    font-weight: bold;
-    color: #333;
+    font-size: 20px; 
+    font-weight: 600;
+    color: #212529;
     line-height: 1.4;
+    letter-spacing: -0.3px;
 }
 
-/* แท็กตัวเลขอันดับของเพลง */
+/* แท็กตัวเลขอันดับของเพลง - แบบเรียบหรู */
 .song-rank {
     position: absolute;
-    top: 24px;
-    right: 24px; 
+    top: 30px;
+    right: 30px; 
     left: auto;
-    background: #fff8e1;
-    border: 1px solid #ffe082;
-    color: #b57a35;
-    padding: 5px 14px;
-    border-radius: 12px;
-    font-size: 14px;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    color: #495057;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
 }
 
-/* ปุ่มกดทักทาย มินิมอล */
+/* ปุ่มกดทักทาย - จากสีส้มสว่าง เปลี่ยนเป็นปุ่มสีดำหรูสไตล์แบรนด์แฟชั่น/เทคโนโลยี */
 button {
     display: block;
-    margin: 50px auto 0 auto;
-    background: linear-gradient(135deg, #ffe082, #ffd54f);
-    color: #5d4037;
+    margin: 60px auto 0 auto;
+    background: #212529;
+    color: #ffffff;
     border: none;
-    padding: 14px 36px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 16px;
+    padding: 14px 40px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 6px 20px rgba(255, 224, 130, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: all 0.2s ease;
+    letter-spacing: 0.5px;
 }
 
 button:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 24px rgba(255, 224, 130, 0.5);
+    background: #343a40;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
